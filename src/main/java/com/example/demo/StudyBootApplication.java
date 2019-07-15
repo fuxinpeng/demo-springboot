@@ -13,6 +13,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 public class StudyBootApplication {
 
 	public static void main(String[] args) {
+		System.out.println("第二个提交");
 		SpringApplication.run(StudyBootApplication.class, args);
 	}
 
