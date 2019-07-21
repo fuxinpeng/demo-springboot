@@ -26,10 +26,10 @@ public class StudyBootApplicationTests {
 
 	@Autowired
 	private DataSource dataSource;
-	@Autowired
-	private RabbitTemplate rabbitTemplate;
-	@Autowired
-	private AmqpAdmin amqpAdmin;
+//	@Autowired
+//	private RabbitTemplate rabbitTemplate;
+//	@Autowired
+//	private AmqpAdmin amqpAdmin;
 	
 	@Test
 	public void getDataSource() {
@@ -38,32 +38,32 @@ public class StudyBootApplicationTests {
 		System.out.println(dds.getMaxActive());
 	}
 	
-	@Test
-	public void testExchangeDirect() {
-		Map<String,Object> map = new HashMap<String,Object>();
-		map.put("msg", "这是第一个消息");
-		map.put("data", Arrays.asList("helloworld",123,true));
-		rabbitTemplate.convertAndSend("exchange.direct", "kingdee",map);
-	}
-	
-	@Test
-	public void receive() {
-		Object o = rabbitTemplate.receiveAndConvert("kingdee");
-		System.out.println(o.getClass());
-		System.out.println(o);
-	}
-	
-	@Test
-	public void createExchange() {
-		amqpAdmin.declareExchange(new DirectExchange("amqpadmin.exchange"));
-		amqpAdmin.declareQueue(new Queue("amqpadmin.queue",true));
-		amqpAdmin.declareBinding(new Binding("amqpadmin.queue", Binding.DestinationType.QUEUE,
-				"amqpadmin.exchange", "amqpadmin.queue", null));
-	}
-	
-	@Test
-	public void deleteExchange() {
-		amqpAdmin.deleteExchange("amqpadmin.exchange");
-		amqpAdmin.deleteQueue("amqpadmin.queue");
-	}
+//	@Test
+//	public void testExchangeDirect() {
+//		Map<String,Object> map = new HashMap<String,Object>();
+//		map.put("msg", "这是第一个消息");
+//		map.put("data", Arrays.asList("helloworld",123,true));
+//		rabbitTemplate.convertAndSend("exchange.direct", "kingdee",map);
+//	}
+//	
+//	@Test
+//	public void receive() {
+//		Object o = rabbitTemplate.receiveAndConvert("kingdee");
+//		System.out.println(o.getClass());
+//		System.out.println(o);
+//	}
+//	
+//	@Test
+//	public void createExchange() {
+//		amqpAdmin.declareExchange(new DirectExchange("amqpadmin.exchange"));
+//		amqpAdmin.declareQueue(new Queue("amqpadmin.queue",true));
+//		amqpAdmin.declareBinding(new Binding("amqpadmin.queue", Binding.DestinationType.QUEUE,
+//				"amqpadmin.exchange", "amqpadmin.queue", null));
+//	}
+//	
+//	@Test
+//	public void deleteExchange() {
+//		amqpAdmin.deleteExchange("amqpadmin.exchange");
+//		amqpAdmin.deleteQueue("amqpadmin.queue");
+//	}
 }

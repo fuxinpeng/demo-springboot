@@ -22,7 +22,7 @@ public class BookService{
 	
 	//配置多个队列
 	//@RabbitListener(queues= "kingdee")
-	@RabbitListener(queues= {"kingdee","kingdee.zwy"})
+	//@RabbitListener(queues= {"kingdee","kingdee.zwy"})
 	public void receiveRabbitMQ(Map<String,Object> map) {
 		System.out.println("收到消息:"+map);
 	}
