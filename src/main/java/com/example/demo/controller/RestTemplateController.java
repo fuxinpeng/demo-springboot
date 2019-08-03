@@ -36,11 +36,13 @@ public class RestTemplateController {
         ResponseEntity<JSONObject> response = restTemplate.exchange(targetUrl, HttpMethod.GET, entity, JSONObject.class);
     }
 
-    public void getObject(){
-        URI targetUrl = UriComponentsBuilder.fromUriString("").path("")
-                .queryParam("userName", "")
-                .queryParam("buyMsgNum", "").build().encode().toUri();
-        JSONObject res = restTemplate.getForObject(targetUrl,JSONObject.class);
+    public void getObject(String url,JSONObject json){
+        HttpHeaders headers = new HttpHeaders();
+        MediaType type = MediaType.parseMediaType("application/json; charset=UTF-8");
+        headers.setContentType(type);
+        headers.add("Accept", MediaType.APPLICATION_JSON.toString());
+        HttpEntity<String> formEntity = new HttpEntity<String>(json.toString(), headers);
+        String result = restTemplate.getForObject(url, String.class,formEntity);
     }
 
     public void getEntity(){
@@ -55,7 +57,8 @@ public class RestTemplateController {
     }
 
     public void postObject(){
-        URI targetUrl = UriComponentsBuilder.fromUriString("").build().encode().toUri();
+        URI targetUrl = UriComponentsBuilder.fromUriString("").queryParam("userName", "")
+                .queryParam("buyMsgNum", "").build().encode().toUri();
         //用postobject参数用MultiValueMap,不要用HashMap,并且参数默认是json格式
         MultiValueMap<String,Object> parameters = new LinkedMultiValueMap<String,Object>();
         parameters.add("action", "orderSync");
