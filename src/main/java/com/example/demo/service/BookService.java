@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Book;
 import com.example.demo.mapper.BookMapper;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 public class BookService{
