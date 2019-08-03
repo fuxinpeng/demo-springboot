@@ -13,7 +13,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
 public class StudyBootApplication {
 
 	public static void main(String[] args) {
-		System.out.println("测试冲突");
 		SpringApplication.run(StudyBootApplication.class, args);
 	}
 
