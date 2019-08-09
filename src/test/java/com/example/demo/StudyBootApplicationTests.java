@@ -66,4 +66,12 @@ public class StudyBootApplicationTests {
 //		amqpAdmin.deleteExchange("amqpadmin.exchange");
 //		amqpAdmin.deleteQueue("amqpadmin.queue");
 //	}
+
+	@Test
+	public void testStr(){
+		String a = "a" +"b";
+		String b = "ab";
+		System.out.println(a==b);
+	}
+
 }
