@@ -8,9 +8,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class RedisManager {
-	@Autowired
+	//@Autowired
 	private RedisTemplate<String, Object> redisTemplate;
 	
 	public static final String ZWY_CONTEXT = "ZWYContext";

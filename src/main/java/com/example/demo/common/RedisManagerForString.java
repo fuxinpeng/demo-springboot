@@ -14,9 +14,9 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class RedisManagerForString {
-	@Autowired
+	//@Autowired
 	private RedisTemplate<String, Object> redisTemplateForString;
 	
 	public static final String USERTOKEN_CONTEXT = "Token2UserId";

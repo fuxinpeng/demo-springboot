@@ -11,10 +11,10 @@ import org.springframework.web.client.RestTemplate;
  * @author
  * @date 2019/8/8
  */
-@Configuration
+//@Configuration
 public class RedisConfig {
 
-    @Bean
+    //@Bean
     public RedisTemplate<Object,Object> redisTemplate(RedisConnectionFactory redisConnectionFactory){
         RedisTemplate<Object,Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
