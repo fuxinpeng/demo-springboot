@@ -16,8 +16,9 @@ import org.springframework.web.client.RestTemplate;
 public class StudyBootApplication {
 
 	public static void main(String[] args) {
+		System.out.println("springboot开始启动......");
 		SpringApplication.run(StudyBootApplication.class, args);
-		System.out.println("springboot启动成功");
+		System.out.println("springboot启动成功......");
 	}
 
 	@Bean
