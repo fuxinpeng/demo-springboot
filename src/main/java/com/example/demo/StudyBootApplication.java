@@ -24,8 +24,8 @@ public class StudyBootApplication {
 	@Bean
 	public RestTemplate getRestTemplate(){
 		SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
-		requestFactory.setConnectTimeout(20000);// 设置建立连接的时间不超过20秒
-		requestFactory.setReadTimeout(20000);//设置读取数据的时间不超过20秒
+		requestFactory.setConnectTimeout(30000);// 设置建立连接的时间不超过20秒
+		requestFactory.setReadTimeout(30000);//设置读取数据的时间不超过20秒
 		RestTemplate restTemplate = new RestTemplate(requestFactory);
 		return restTemplate;
 	}
