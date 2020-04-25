@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 public class StudyBootApplication {
 
 	public static void main(String[] args) {
-		System.out.println("测试eclipse冲突2222");
+		System.out.println("测试解决idea冲突2");
 		SpringApplication.run(StudyBootApplication.class, args);
 	}
 
